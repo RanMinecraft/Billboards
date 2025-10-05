@@ -77,7 +77,15 @@ public class Utils {
 	public static boolean isNotSign(Material material) {
 		if (material == null) return true;
 		if (hasBlockData) {
-			return !material.data.isAssignableFrom(org.bukkit.block.data.type.Sign.class) && !material.data.isAssignableFrom(org.bukkit.block.data.type.WallSign.class);
+            Class<?> data = material.data;
+            if (data.isAssignableFrom(org.bukkit.block.data.type.Sign.class)) return false;
+            if (data.isAssignableFrom(org.bukkit.block.data.type.WallSign.class)) return false;
+            try {
+                if (data.isAssignableFrom(org.bukkit.block.data.type.HangingSign.class)) return false;
+                if (data.isAssignableFrom(org.bukkit.block.data.type.WallHangingSign.class)) return false;
+            } catch (Throwable ignored) {
+            }
+            return true;
 		}
 		return !legacySigns.contains(material.name().toUpperCase());
 	}
