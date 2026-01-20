@@ -1,10 +1,11 @@
 name: Billboards
 main: de.blablubbabc.billboards.BillboardsPlugin
-api-version: '1.13'
+api-version: '1.21'
 version: '${version}'
 authors:
   - blablubbabc
   - MrXiaoM
+  - Ranica
 description: Rent-able signs.
 depend:
   - Vault

@@ -16,13 +16,13 @@ repositories {
 }
 
 dependencies {
-    compileOnly("org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.21.11-R0.1-SNAPSHOT")
     compileOnly("net.milkbowl.vault:VaultAPI:1.7")
-    compileOnly("me.clip:placeholderapi:2.11.6")
+    compileOnly("me.clip:placeholderapi:2.11.7")
     compileOnly("com.github.dmulloy2:ProtocolLib:5.2.0")
     compileOnly("org.jetbrains:annotations:24.0.1")
 
-    implementation("commons-lang:commons-lang:2.6")
+    implementation("commons-lang:commons-lang:20030203.000129")
     implementation("com.github.MrXiaoM:holoeasy:3.4.3-1")
     implementation("com.github.technicallycoded:FoliaLib:0.4.4")
 }

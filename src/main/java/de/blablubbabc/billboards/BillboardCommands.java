@@ -4,7 +4,6 @@ import de.blablubbabc.billboards.entry.BillboardSign;
 import de.blablubbabc.billboards.entry.HologramHolder;
 import de.blablubbabc.billboards.message.Message;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -14,8 +13,6 @@ import org.bukkit.entity.Player;
 import de.blablubbabc.billboards.util.SoftBlockLocation;
 import de.blablubbabc.billboards.util.Utils;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Set;
 
 public class BillboardCommands implements CommandExecutor {
 
@@ -50,7 +47,7 @@ public class BillboardCommands implements CommandExecutor {
 		}
 
 		// get targeted sign:
-		Block targetBlock = player.getTargetBlock((Set<Material>) null, 10);
+		Block targetBlock = player.getTargetBlock(null, 10);
 		if (Utils.isNotSign(targetBlock.getType())) {
 			player.sendMessage(Message.NO_TARGETED_SIGN.get());
 			return true;

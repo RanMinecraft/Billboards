@@ -80,9 +80,11 @@ public class Utils {
             Class<?> data = material.data;
             if (data.isAssignableFrom(org.bukkit.block.data.type.Sign.class)) return false;
             if (data.isAssignableFrom(org.bukkit.block.data.type.WallSign.class)) return false;
+			if (data.isAssignableFrom(org.bukkit.block.data.type.HangingSign.class)) return false;
             try {
                 if (data.isAssignableFrom(org.bukkit.block.data.type.HangingSign.class)) return false;
                 if (data.isAssignableFrom(org.bukkit.block.data.type.WallHangingSign.class)) return false;
+				if (data.isAssignableFrom(org.bukkit.block.data.type.HangingSign.class)) return false;
             } catch (Throwable ignored) {
             }
             return true;
