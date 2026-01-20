@@ -1,6 +1,6 @@
 package de.blablubbabc.billboards.util;
 
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang.util.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;

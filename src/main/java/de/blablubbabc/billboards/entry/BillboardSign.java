@@ -5,7 +5,7 @@ import java.util.UUID;
 import de.blablubbabc.billboards.BillboardsPlugin;
 import de.blablubbabc.billboards.message.Message;
 import de.blablubbabc.billboards.message.Messages;
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang.util.Validate;
 import org.bukkit.entity.Player;
 
 import de.blablubbabc.billboards.util.SoftBlockLocation;

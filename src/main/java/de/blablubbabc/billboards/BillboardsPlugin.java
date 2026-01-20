@@ -29,7 +29,7 @@ import de.blablubbabc.billboards.gui.GuiSignEditConfig;
 import de.blablubbabc.billboards.listener.*;
 import de.blablubbabc.billboards.message.Message;
 import de.blablubbabc.billboards.message.Messages;
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang.util.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
