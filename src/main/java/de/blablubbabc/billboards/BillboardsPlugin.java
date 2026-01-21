@@ -35,6 +35,8 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
+import org.bukkit.block.sign.Side;
+import org.bukkit.block.sign.SignSide;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -360,10 +362,16 @@ public class BillboardsPlugin extends JavaPlugin implements Listener {
 	private void setRentableText(BillboardSign billboard, Sign sign) {
 		String[] msgArgs = billboard.getMessageArgs();
 
-		sign.setLine(0, Message.SIGN_LINE_1.get(msgArgs));
-		sign.setLine(1, Message.SIGN_LINE_2.get(msgArgs));
-		sign.setLine(2, Message.SIGN_LINE_3.get(msgArgs));
-		sign.setLine(3, Message.SIGN_LINE_4.get(msgArgs));
+		SignSide frontSide = sign.getSide(Side.FRONT);
+		SignSide backSide = sign.getSide(Side.BACK);
+		frontSide.setLine(0, Message.RENT_SIGN_LINE_1.get(msgArgs));
+		frontSide.setLine(1, Message.RENT_SIGN_LINE_2.get(msgArgs));
+		frontSide.setLine(2, Message.RENT_SIGN_LINE_3.get(msgArgs));
+		frontSide.setLine(3, Message.RENT_SIGN_LINE_4.get(msgArgs));
+		backSide.setLine(0, Message.RENT_SIGN_LINE_1.get(msgArgs));
+		backSide.setLine(1, Message.RENT_SIGN_LINE_2.get(msgArgs));
+		backSide.setLine(2, Message.RENT_SIGN_LINE_3.get(msgArgs));
+		backSide.setLine(3, Message.RENT_SIGN_LINE_4.get(msgArgs));
 		sign.update();
 	}
 

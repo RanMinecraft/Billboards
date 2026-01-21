@@ -24,6 +24,8 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.Sign;
+import org.bukkit.block.sign.Side;
+import org.bukkit.block.sign.SignSide;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -98,8 +100,11 @@ public class SignEditing implements Listener {
 							Location location = signLoc.getBukkitLocation();
 							plugin.getScheduler().runAtLocation(location, (t) -> { // 更新木牌
 								Sign target = (Sign) location.getBlock().getState();
+								SignSide frontSide = target.getSide(Side.FRONT);
+								SignSide backSide = target.getSide(Side.BACK);
 								for (int i = 0; i < lines.length && i < 4; i++) {
-									target.setLine(i, lines[i]);
+									frontSide.setLine(i, lines[i]);
+									backSide.setLine(i, lines[i]);
 								}
 								target.update();
 							});

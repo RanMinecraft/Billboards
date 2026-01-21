@@ -13,6 +13,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.block.Block;
 import org.bukkit.block.Sign;
+import org.bukkit.block.sign.Side;
+import org.bukkit.block.sign.SignSide;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -132,12 +134,18 @@ public class SignInteraction implements Listener {
 			plugin.saveBillboards();
 
 			// initialize new sign text:
-			Sign sign = (Sign) clickedBlock.getState();
 			String[] msgArgs = billboard.getMessageArgs();
-			sign.setLine(0, Message.RENT_SIGN_LINE_1.get(msgArgs));
-			sign.setLine(1, Message.RENT_SIGN_LINE_2.get(msgArgs));
-			sign.setLine(2, Message.RENT_SIGN_LINE_3.get(msgArgs));
-			sign.setLine(3, Message.RENT_SIGN_LINE_4.get(msgArgs));
+			Sign sign = (Sign) clickedBlock.getState();
+			SignSide frontSide = sign.getSide(Side.FRONT);
+			SignSide backSide = sign.getSide(Side.BACK);
+			frontSide.setLine(0, Message.RENT_SIGN_LINE_1.get(msgArgs));
+			frontSide.setLine(1, Message.RENT_SIGN_LINE_2.get(msgArgs));
+			frontSide.setLine(2, Message.RENT_SIGN_LINE_3.get(msgArgs));
+			frontSide.setLine(3, Message.RENT_SIGN_LINE_4.get(msgArgs));
+			backSide.setLine(0, Message.RENT_SIGN_LINE_1.get(msgArgs));
+			backSide.setLine(1, Message.RENT_SIGN_LINE_2.get(msgArgs));
+			backSide.setLine(2, Message.RENT_SIGN_LINE_3.get(msgArgs));
+			backSide.setLine(3, Message.RENT_SIGN_LINE_4.get(msgArgs));
 			sign.update();
 
 			player.sendMessage(Message.YOU_HAVE_RENT_A_SIGN.get(msgArgs));
